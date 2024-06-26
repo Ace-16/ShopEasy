@@ -2,12 +2,11 @@ import React from "react";
 
 import "./CartProduct.css";
 import { useStateValue } from "../../StateProvider";
-import { type } from "@testing-library/user-event/dist/type";
 
 const Star = () => <span>⭐</span>;
 
 const CartProduct = ({ id, title, image, price, rating }) => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [, dispatch] = useStateValue();
   const removeFromBasket = () => {
     dispatch({
       type: "REMOVE_FROM_CART",
@@ -17,7 +16,7 @@ const CartProduct = ({ id, title, image, price, rating }) => {
 
   return (
     <div className="cartProduct">
-      <img className="cartProduct__image" src={image} />
+      <img className="cartProduct__image" src={image} alt="Cart Item" />
       <div className="cartProduct__info">
         <p className="cartProduct__title">{title}</p>
         <p className="cartProduct__price">

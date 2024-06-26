@@ -5,7 +5,7 @@ import CartProduct from "../CartProduct/CartProduct.jsx";
 import { useStateValue } from "../../StateProvider.jsx";
 
 const Cart = () => {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
   return (
     <div className="cart">
       <div className="cart__left">
