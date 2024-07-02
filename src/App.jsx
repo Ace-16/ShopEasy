@@ -26,6 +26,7 @@ function Main() {
         });
       }
     });
+    // eslint-disable-next-line
   }, []);
 
   const location = useLocation();
