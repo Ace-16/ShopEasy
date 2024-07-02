@@ -4,9 +4,16 @@ import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useStateValue } from "../../StateProvider";
+import { auth } from "../../firebase";
 
 const Header = () => {
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
+
+  const handleAuthentication = () => {
+    if (user) {
+      auth.signOut();
+    }
+  };
 
   return (
     <div className="header">
@@ -22,10 +29,17 @@ const Header = () => {
         <SearchIcon className="header__searchIcon" />
       </div>
       <div className="header__nav">
-        <Link style={{ textDecoration: "none", color: "white" }} to={"/login"}>
-          <div className="header__option">
-            <span className="header__optionLineOne">Hello Guest</span>
-            <span className="header__optionLineTwo">Sign In</span>
+        <Link
+          style={{ textDecoration: "none", color: "white" }}
+          to={!user && "/login"}
+        >
+          <div onClick={handleAuthentication} className="header__option">
+            <span className="header__optionLineOne">
+              Hello {user ? user.email : "Guest"}
+            </span>
+            <span className="header__optionLineTwo">
+              {user ? "Sign Out" : "Sign In"}
+            </span>
           </div>
         </Link>
         <div className="header__option">

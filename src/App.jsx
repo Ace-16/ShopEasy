@@ -5,8 +5,29 @@ import Header from "./Components/Header/Header.jsx";
 import Home from "./Components/Home/Home.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
 import Login from "./Components/Login/Login.jsx";
+import { useEffect } from "react";
+import { auth } from "./firebase.js";
+import { useStateValue } from "./StateProvider.jsx";
 
 function Main() {
+  const [, dispatch] = useStateValue();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+        });
+      } else {
+        dispatch({
+          type: "SET_USER",
+          user: null,
+        });
+      }
+    });
+  }, []);
+
   const location = useLocation();
   return (
     <>

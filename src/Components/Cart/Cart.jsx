@@ -5,7 +5,7 @@ import CartProduct from "../CartProduct/CartProduct.jsx";
 import { useStateValue } from "../../StateProvider.jsx";
 
 const Cart = () => {
-  const [{ basket }] = useStateValue();
+  const [{ basket, user }] = useStateValue();
   return (
     <div className="cart">
       <div className="cart__left">
@@ -15,6 +15,7 @@ const Cart = () => {
           alt="Advertisement"
         />
         <div>
+          {user ? <h3>Hello, {user?.email}</h3> : ""}
           <h1 className="cart__title">Your shopping basket</h1>
 
           {basket.map((item) => (
