@@ -18,11 +18,7 @@ const Header = () => {
   return (
     <div className="header">
       <Link to={"/"}>
-        <img
-          className="header__logo"
-          src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
-          alt="Amazon Logo"
-        />
+        <img className="header__logo" src="/Logo.png" alt="Amazon Logo" />
       </Link>
       <div className="header__search">
         <input className="header__searchIn" type="text" />

@@ -1,17 +1,117 @@
-.cart{
+/* Cart.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5; /* Light Gray */
+}
+
+.cart {
   display: flex;
+  flex-direction: column;
   padding: 20px;
-  background-color: white;
-  height: max-content;
+  background-color: #e3f2fd; /* Light Blue */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cart__ad{
-  width: 100%;
-  margin-bottom: 10px;
+.cart__left {
+  flex: 0.75;
+  background-color: #ffffff; /* White */
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cart__title{
-  margin-right: 10px;
-  padding: 10px;
-  border-bottom: 1px solid lightgrey;
+.cart__title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #2e7d32; /* Green */
+}
+
+.cart__right {
+  flex: 0.25;
+  background-color: #ffffff; /* White */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+@media (min-width: 992px) {
+  .cart {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .cart__left {
+    margin-bottom: 0;
+  }
+
+  .cart__right {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .cart {
+    flex-direction: column;
+    width: auto;
+  }
+
+  .cart__left,
+  .cart__right {
+    margin: 0 auto 20px auto;
+    width: 90%;
+  }
+
+  .cart__right {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart__title {
+    font-size: 24px;
+    width: auto;
+  }
+
+  .cart__ad {
+    max-height: 150px;
+  }
+
+  .cart__left,
+  .cart__right {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.cart__product {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.cart__product img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+.cart__productDetails {
+  flex: 1;
+}
+
+.cart__productTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.cart__productPrice {
+  font-size: 16px;
+  color: #1e88e5; /* Blue */
 }
