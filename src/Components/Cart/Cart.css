@@ -38,6 +38,21 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
 }
+.cart__addons {
+  background: #66bb6a; /* Green */
+  border: 1px solid #388e3c; /* Dark Green */
+  margin-top: 10px;
+  border-radius: 4px;
+  color: #ffffff; /* White */
+  font-weight: bold;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.cart__addons :hover {
+  background-color: #43a047; /* Darker Green */
+}
 
 @media (min-width: 992px) {
   .cart {
