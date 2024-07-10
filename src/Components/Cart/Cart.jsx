@@ -4,10 +4,11 @@ import "./Cart.css";
 import Subtotal from "../Subtotal/Subtotal.jsx";
 import CartProduct from "../CartProduct/CartProduct.jsx";
 import { useStateValue } from "../../StateProvider.jsx";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const [{ basket, user }] = useStateValue();
+  const navigate = useNavigate();
 
   return (
     <div className="cart">
@@ -27,9 +28,9 @@ const Cart = () => {
               rating={item.rating}
             />
           ))}
-          <Link to={"/"}>
-            <button className="cart__addons">Add more items?</button>
-          </Link>
+          <button onClick={(e) => navigate("/")} className="cart__addons">
+            Add more items?
+          </button>
         </div>
       </div>
       <div className="cart__right">
