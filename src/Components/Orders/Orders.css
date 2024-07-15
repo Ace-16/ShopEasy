@@ -1,0 +1,21 @@
+.orders {
+  padding: 20px;
+  background-color: #e3f2fd;
+  min-height: 100vh;
+}
+
+.orders h1 {
+  text-align: center;
+  color: #4a148c; /* Dark Purple */
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .orders {
+    padding: 10px;
+  }
+
+  .orders__order {
+    grid-template-columns: 1fr;
+  }
+}

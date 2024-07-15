@@ -5,7 +5,7 @@ import { useStateValue } from "../../StateProvider";
 
 const Star = () => <span>⭐</span>;
 
-const CartProduct = ({ id, title, image, price, rating }) => {
+const CartProduct = ({ id, title, image, price, rating, hideButton }) => {
   const [, dispatch] = useStateValue();
   const removeFromBasket = () => {
     dispatch({
@@ -28,7 +28,9 @@ const CartProduct = ({ id, title, image, price, rating }) => {
             <Star />
           ))}
         </div>
-        <button onClick={removeFromBasket}>Remove from Basket</button>
+        {!hideButton && (
+          <button onClick={removeFromBasket}>Remove from Basket</button>
+        )}
       </div>
     </div>
   );

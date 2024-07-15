@@ -39,8 +39,14 @@ const Header = () => {
           </div>
         </Link>
         <div className="header__option">
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
+          <Link
+            to={"/orders"}
+            style={{ textDecoration: "none", color: "inherit" }}
+          >
+            <span className="header__optionLineOne">Returns</span>
+            <br />
+            <span className="header__optionLineTwo">& Orders</span>
+          </Link>
         </div>
         <div className="header__optionBasket">
           <Link

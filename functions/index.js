@@ -1,17 +1,18 @@
-const functions = require('firebase-functions');
+const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const stripe = require("stripe")("sk_test_51Pb6HtRxUlNo5otWaZ2o56ykAIszWsvwVUphWbyGJDFZdUQ2dVbjQWy2wcsW3orEQrXvGcBKn9Kssa6WQLf6uiBT00nw3fK6sm")
+const stripe = require("stripe")("sk_test_51Pb6HtRxUlNo5otWaZ2o56ykA"+
+"IszWsvwVUphWbyGJDFZdUQ2dVbjQWy2wcsW3orEQrXvGcBKn9Kssa6WQLf6uiBT00nw3fK6sm");
 
-//API
+// API
 
-//App config
+// App config
 const app = express();
-//Middleware
-app.use(cors({origin: true }));
+// Middleware
+app.use(cors({origin: true}));
 app.use(express.json());
 
-//API routes
+// API routes
 app.post("/payments/create", async (request, response) => {
   const total = request.query.total;
 
@@ -21,10 +22,10 @@ app.post("/payments/create", async (request, response) => {
     amount: total,
     currency: "usd",
   });
-  //OK - Created
+  // OK - Created
   response.status(201).send({
     clientSecret: paymentIntent.client_secret,
-  })
-})
-//Listen command
+  });
+});
+// Listen command
 exports.api = functions.https.onRequest(app);
