@@ -13,7 +13,7 @@ function Login() {
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        navigate("/");
+        if (auth) navigate("/");
       })
       .catch((error) => alert(error.message));
   };
