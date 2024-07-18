@@ -18,17 +18,21 @@ function Login() {
       .catch((error) => alert(error.message));
   };
 
-  const register = (e) => {
-    e.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((auth) => {
-        console.log(auth);
-        if (auth) {
-          navigate("/");
-        }
-      })
-      .catch((error) => alert(error.message));
+  // const register = (e) => {
+  //   e.preventDefault();
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((auth) => {
+  //       console.log(auth);
+  //       if (auth) {
+  //         navigate("/");
+  //       }
+  //     })
+  //     .catch((error) => alert(error.message));
+  // };
+
+  const register = () => {
+    navigate("/create_account");
   };
 
   return (

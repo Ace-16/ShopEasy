@@ -1,0 +1,68 @@
+.create__account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #e3f2fd;
+  padding: 20px;
+}
+
+.account__button {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.account__name,
+.account__email,
+.account__address,
+.account__password {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.account__button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0c14b;
+  border: 1px solid #a88734;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+account__button:hover {
+  background-color: #ddb347;
+}
+
+@media (min-width: 600px) {
+  .account__name {
+    display: flex;
+    gap: 10px;
+  }
+
+  .account__name > div {
+    flex: 1;
+  }
+}
+
+@media (max-width: 599px) {
+  form {
+    width: 90%;
+  }
+}

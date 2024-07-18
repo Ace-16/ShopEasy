@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../firebase";
 
 const Payment = () => {
-  const [{ basket, user }, dispatch] = useStateValue();
+  const [{ basket, user, address }, dispatch] = useStateValue();
 
   const stripe = useStripe();
   const elements = useElements();
@@ -88,8 +88,7 @@ const Payment = () => {
           </div>
           <div className="payment__address">
             <p>{user?.email}</p>
-            <p>123 React Lane</p>
-            <p>Los Angeles, CA</p>
+            <p>{address}</p>
           </div>
         </div>
         <div className="payment__section">

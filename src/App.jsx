@@ -12,6 +12,7 @@ import Payment from "./Components/Payment/Payment.jsx";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Orders from "./Components/Orders/Orders.jsx";
+import CreateAccount from "./Components/CreateAccount/CreateAccount.jsx";
 
 const promise = loadStripe(
   "pk_test_51Pb6HtRxUlNo5otWJnTGuH3nGRupT2N71JCN4BUSOrUGzWwMyyyYzd3sge0vobhYtj0dYNOjY1U2WEI1gTJgEaoF00bPpF6p51"
@@ -31,6 +32,10 @@ function Main() {
         dispatch({
           type: "SET_USER",
           user: null,
+        });
+        dispatch({
+          type: "SET_ADDRESS",
+          address: "",
         });
       }
     });
@@ -54,6 +59,7 @@ function Main() {
           }
         />
         <Route path="/orders" element={<Orders />} />
+        <Route path="/create_account" element={<CreateAccount />} />
       </Routes>
     </>
   );

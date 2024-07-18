@@ -7,9 +7,10 @@ import { useStateValue } from "../../StateProvider.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const [{ basket, user }] = useStateValue();
+  const [{ basket, user, address }] = useStateValue();
   const navigate = useNavigate();
 
+  console.log(address);
   return (
     <div className="cart">
       <div className="cart__left">
